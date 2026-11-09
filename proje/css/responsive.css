@@ -1,0 +1,257 @@
+/* ==========================================================================
+   İLKOKUL ATÖLYESİ - RESPONSIVE STİL DOSYASI (responsive.css)
+   Tablet, Mobil ve Farklı Ekran Çözünürlükleri İçin Düzenlemeler
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BÜYÜK TABLET VE KÜÇÜK MASAÜSTÜ (max-width: 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  /* Header & Mobil Menü Dönüşümü */
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: #FFFFFF;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 12px;
+    overflow-y: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform var(--transition-smooth);
+    z-index: 999;
+  }
+
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 16px;
+    font-size: 1.05rem;
+    background: var(--bg-page);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Mobil Dropdown Accordion */
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: var(--bg-subtle);
+    padding: 8px 12px;
+    margin-top: 6px;
+    display: none;
+    width: 100%;
+  }
+
+  .nav-item.dropdown-open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-link {
+    padding: 10px 12px;
+  }
+
+  /* Hero Düzeni */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-search-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-quick-tags {
+    justify-content: center;
+  }
+
+  .hero-visual img {
+    max-width: 440px;
+  }
+
+  /* İstatistikler */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Hakkımızda Izgarası */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* İletişim Izgarası */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer Izgarası */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. STANDART TABLET VE DİKEY GÖRÜNÜM (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Üst Duyuru Çubuğu */
+  .top-bar-right {
+    display: none;
+  }
+  
+  .top-bar .container {
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  /* Filtreleme ve Arama Çubuğu */
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-tabs {
+    overflow-x: auto;
+    padding-bottom: 6px;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .filter-search-box {
+    width: 100%;
+  }
+
+  /* Form Alanları */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact-form-wrapper {
+    padding: 24px;
+  }
+
+  /* CTA ve E-Bülten Kutusu */
+  .cta-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 36px 24px;
+  }
+
+  .cta-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .newsletter-form {
+    max-width: 100%;
+  }
+
+  /* Toast Konumu */
+  .toast-container {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .toast {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. AKILLI TELEFONLAR VE KÜÇÜK EKRANLAR (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .nav-container {
+    height: 70px;
+  }
+
+  .brand-logo img {
+    height: 40px;
+  }
+
+  .hero-section {
+    padding: 40px 0 60px;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-search-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .hero-search-wrapper .btn {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+}
